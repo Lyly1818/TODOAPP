@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TODOAPP</string>
     <string name="msg_empty">place holder text</string>
+    <string name="menu_about">About</string>
 </resources>
