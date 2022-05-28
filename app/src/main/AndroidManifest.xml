@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.trancool.todoapp">
-<supports-screens
-    android:largeScreens="true"
-    android:normalScreens="true"
-    android:smallScreens="true"
-    android:xlargeScreens="true"
-    />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TODOAPP">
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

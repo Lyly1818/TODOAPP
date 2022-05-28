@@ -1,7 +1,9 @@
 package net.trancool.todoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import net.trancool.todoapp.databinding.ActivityMainBinding
 
@@ -20,4 +22,14 @@ class MainActivity : AppCompatActivity() {
 
         return super.onCreateOptionsMenu(menu)
     }
+//Navigate to AboutActivity when user tape about menu using Intent
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.about -> {
+            startActivity(Intent(this, AboutActivity::class.java))
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
+    }
+
+
 }
