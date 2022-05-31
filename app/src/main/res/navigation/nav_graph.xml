@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/rosterListFragment"
-        android:name="net.trancool.todoapp.RosterListFragment"
+        android:name="RosterListFragment"
         android:label="RosterListFragment" />
 </navigation>
