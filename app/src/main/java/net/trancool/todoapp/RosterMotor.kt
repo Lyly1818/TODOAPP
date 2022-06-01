@@ -8,4 +8,12 @@ class RosterMotor(private val repo: ToDoRepository): ViewModel() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     val items = repo.items
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun save(model: ToDoModel){
+        repo.save(model)
+    }
+
+
+
 }

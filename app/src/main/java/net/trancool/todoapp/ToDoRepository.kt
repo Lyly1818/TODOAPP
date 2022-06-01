@@ -24,4 +24,14 @@ class ToDoRepository {
         ),
     )
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun save(model: ToDoModel) {
+        items = if (items.any { it.id == model.id }) {
+            items.map { if (it.id == model.id) model else it }
+        } else {
+            items + model
+        }
+    }
+
+
 }
