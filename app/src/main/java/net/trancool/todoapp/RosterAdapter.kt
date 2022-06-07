@@ -9,7 +9,9 @@ import net.trancool.todoapp.databinding.TodoRowBinding
 
 class RosterAdapter(
     private val inflater: LayoutInflater,
-    private val onCheckedboxToggle:(ToDoModel) -> Unit
+    private val onCheckboxToggle:(ToDoModel) -> Unit,
+    private val onRowClick: (ToDoModel) -> Unit
+
     ) :
     ListAdapter<ToDoModel, RosterRowHolder>(DiffCallback) {
     override fun onCreateViewHolder(
@@ -17,7 +19,9 @@ class RosterAdapter(
         viewType: Int
     ) = RosterRowHolder(
         TodoRowBinding.inflate(inflater, parent, false),
-        onCheckedboxToggle
+        onCheckboxToggle,
+        onRowClick
+
     )
 
     override fun onBindViewHolder(holder: RosterRowHolder, position: Int) {

@@ -5,13 +5,16 @@ import net.trancool.todoapp.databinding.TodoRowBinding
 
 class RosterRowHolder(
     private val binding: TodoRowBinding,
-    val onCheckedboxToggle : (ToDoModel) -> Unit
-    ) :
+    val checkboxToggle: (ToDoModel) -> Unit,
+    val onRowClick: (ToDoModel) -> Unit
+) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(model: ToDoModel) {
         binding.apply {
+            root.setOnClickListener{ onRowClick(model)}
+
             isCompleted.isChecked = model.isCompleted
-            isCompleted.setOnCheckedChangeListener{ _, _ -> onCheckedboxToggle}
+            isCompleted.setOnCheckedChangeListener{ _, _ -> checkboxToggle(model)}
             desc.text = model.description
 
 

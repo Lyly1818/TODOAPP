@@ -1,3 +1,5 @@
+package net.trancool.todoapp
+import RosterAdapter
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -5,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-//import com.commonsware.todo.databinding.TodoRosterBinding
-//import net.trancool.todoapp.RosterAdapter
 import net.trancool.todoapp.RosterMotor
+import net.trancool.todoapp.ToDoModel
 import net.trancool.todoapp.databinding.TodoRosterBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,10 +29,10 @@ class RosterListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = RosterAdapter(layoutInflater){
-//            model -> TODO()
-            motor.save(it.copy(isCompleted = !it.isCompleted))
-        }
+        val adapter = RosterAdapter(
+            layoutInflater,
+            onCheckboxToggle = {motor.save(it.copy(isCompleted = !it.isCompleted))},
+            onRowClick = ::display)
 
         binding.items.apply {
             setAdapter(adapter)
@@ -46,5 +48,10 @@ class RosterListFragment : Fragment() {
 
         adapter.submitList(motor.items)
         binding.empty.visibility = View.GONE
+    }
+
+    private fun display(model: ToDoModel){
+        findNavController().
+        navigate(RosterListFragmentDirections.displayModel(model.id))
     }
 }

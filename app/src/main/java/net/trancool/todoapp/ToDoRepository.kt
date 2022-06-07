@@ -34,4 +34,8 @@ class ToDoRepository {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun find(modelId: String) = items.find { it.id == modelId }
+
+
 }

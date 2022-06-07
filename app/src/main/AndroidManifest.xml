@@ -19,7 +19,7 @@
         android:theme="@style/Theme.TODOAPP">
         <activity
             android:name=".AboutActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
