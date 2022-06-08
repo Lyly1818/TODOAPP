@@ -5,4 +5,5 @@
     <string name="empty">empty</string>
     <string name="is_completed">isCompleted</string>
     <string name="created_on">created on</string>
+    <string name="description">Description</string>
 </resources>
