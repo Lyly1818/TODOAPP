@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/todo_row.xml" value="0.22" />
         <entry key="app/src/main/res/menu/actions.xml" value="0.3890625" />
         <entry key="app/src/main/res/menu/actions_display.xml" value="0.27708333333333335" />
+        <entry key="app/src/main/res/menu/actions_edit.xml" value="0.26510416666666664" />
       </map>
     </option>
   </component>

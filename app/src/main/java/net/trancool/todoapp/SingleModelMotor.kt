@@ -13,4 +13,8 @@ class SingleModelMotor(
 
         @RequiresApi(Build.VERSION_CODES.O)
         fun  getModel() = repo.find(modelId)
+
+    fun save(model: ToDoModel){
+        repo.save(model)
+    }
 }

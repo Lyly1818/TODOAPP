@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class RosterMotor(private val repo: ToDoRepository): ViewModel() {
 
     @RequiresApi(Build.VERSION_CODES.O)
-    val items = repo.items
+    fun getItem() = repo.items
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun save(model: ToDoModel){
