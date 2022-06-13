@@ -1,4 +1,4 @@
-package net.trancool.todoapp
+package net.trancool.todoapp.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import net.trancool.todoapp.AboutActivity
 import net.trancool.todoapp.R
 //import com.commonsware.todo.databinding.ActivityMainBinding
 import net.trancool.todoapp.databinding.ActivityMainBinding

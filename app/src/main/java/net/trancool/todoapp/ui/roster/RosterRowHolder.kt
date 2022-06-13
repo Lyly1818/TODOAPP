@@ -1,6 +1,7 @@
-package net.trancool.todoapp
+package net.trancool.todoapp.ui.roster
 
 import androidx.recyclerview.widget.RecyclerView
+import net.trancool.todoapp.repo.ToDoModel
 import net.trancool.todoapp.databinding.TodoRowBinding
 
 class RosterRowHolder(

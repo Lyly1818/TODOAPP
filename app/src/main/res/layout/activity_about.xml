@@ -5,7 +5,7 @@
     android:id="@+id/about_layout"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    tools:context=".AboutActivity">
+    tools:context=".ui.AboutActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">TODOAPP</string>
-    <string name="msg_empty">place holder text</string>
+    <string name="msg_empty">Click the + icon to add a todo item!</string>
     <string name="menu_about">About</string>
-    <string name="empty">empty</string>
+    <string name="place_holder">Placeholder text</string>
     <string name="is_completed">isCompleted</string>
     <string name="created_on">created on</string>
     <string name="description">Description</string>
+    <string name="menu_add">add</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_delete">delete</string>
+    <string name="menu_edit">edit</string>
 </resources>

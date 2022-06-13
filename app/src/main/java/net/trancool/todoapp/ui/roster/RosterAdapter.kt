@@ -1,10 +1,11 @@
+package net.trancool.todoapp.ui.roster
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 //import com.commonsware.todo.databinding.TodoRowBinding
-import net.trancool.todoapp.RosterRowHolder
-import net.trancool.todoapp.ToDoModel
+import net.trancool.todoapp.repo.ToDoModel
 import net.trancool.todoapp.databinding.TodoRowBinding
 
 class RosterAdapter(

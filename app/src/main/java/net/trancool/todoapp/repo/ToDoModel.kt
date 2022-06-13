@@ -1,4 +1,4 @@
-package net.trancool.todoapp
+package net.trancool.todoapp.repo
 
 import android.os.Build
 import androidx.annotation.RequiresApi

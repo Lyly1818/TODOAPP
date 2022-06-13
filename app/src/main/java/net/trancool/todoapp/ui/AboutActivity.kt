@@ -1,9 +1,8 @@
-package net.trancool.todoapp
+package net.trancool.todoapp.ui
 
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.webkit.WebViewClient
+import net.trancool.todoapp.R
 import net.trancool.todoapp.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {

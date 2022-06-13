@@ -1,23 +1,42 @@
-package net.trancool.todoapp
-import RosterAdapter
+package net.trancool.todoapp.ui.roster
 import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import net.trancool.todoapp.RosterMotor
-import net.trancool.todoapp.ToDoModel
+import net.trancool.todoapp.R
+import net.trancool.todoapp.repo.ToDoModel
 import net.trancool.todoapp.databinding.TodoRosterBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RosterListFragment : Fragment() {
     private val motor: RosterMotor by viewModel()
-    private lateinit var binding: TodoRosterBinding
+    private var binding: TodoRosterBinding? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.actions_roster, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when the user click add on the app bar call the add()
+        when(item.itemId){
+            R.id.add ->{
+                add()
+                return true
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +53,7 @@ class RosterListFragment : Fragment() {
             onCheckboxToggle = {motor.save(it.copy(isCompleted = !it.isCompleted))},
             onRowClick = ::display)
 
-        binding.items.apply {
+        binding?.items?.apply {
             setAdapter(adapter)
             layoutManager = LinearLayoutManager(context)
 
@@ -47,11 +66,21 @@ class RosterListFragment : Fragment() {
         }
 
         adapter.submitList(motor.getItem())
-        binding.empty.visibility = View.GONE
+        binding?.empty?.visibility =
+            if (adapter.itemCount == 0) View.VISIBLE else View.GONE
     }
+
+
+
+
+
 
     private fun display(model: ToDoModel){
         findNavController().
         navigate(RosterListFragmentDirections.displayModel(model.id))
+    }
+
+    private fun add(){
+        findNavController().navigate(RosterListFragmentDirections.createModel(null))
     }
 }
